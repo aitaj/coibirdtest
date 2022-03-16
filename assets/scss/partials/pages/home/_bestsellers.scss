@@ -49,15 +49,7 @@ section#bestsellers {
 
     .product {
       padding: 30px 70px;
-      &:first-child {
-        margin-left: 30px;
-        @include mq-tablet {
-          margin-left: 0px;
-        }
-        @include mq-small {
-          margin-left: 0px;
-        }
-      }
+
       @include mq-tablet {
         padding: 30px;
       }

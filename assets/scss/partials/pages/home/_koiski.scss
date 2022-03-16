@@ -1,0 +1,45 @@
+section#koiski {
+  padding: 110px 0px;
+  position: relative;
+  .koiski-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    @include mq-tablet {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+    @include mq-small {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 6fr;
+      row-gap: 10px;
+    }
+  }
+  .koiski {
+    &__image {
+      max-width: 100%;
+    }
+  }
+  .brend-name {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      padding: 7px 60px;
+      background-color: $main-color;
+      font-weight: 400;
+      font-size: 47px;
+      line-height: 55px;
+      color: #000000;
+    }
+  }
+}

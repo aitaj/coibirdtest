@@ -1,0 +1,90 @@
+.purejscarousel {
+    overflow: hidden;
+  }
+  
+  .purejscarousel-slides-container:before,
+  .purejscarousel-slides-container:after {
+    content: "";
+    display: table;
+  }
+  
+  .purejscarousel-slides-container:after {
+    clear: both;
+  }
+  
+  .purejscarousel-slide {
+    float: left;
+  }
+  
+  .purejscarousel-btn {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    height: 20px;
+    margin-top: -25px;
+    position: absolute;
+    top: 180px;
+    width: 20px;
+    @include mq-small {
+      top: 200px;
+    }
+  }
+  
+  .purejscarousel-btn-next {
+    border-bottom: 4px solid $main-color;
+    border-right: 4px solid $main-color;
+    right: 100px;
+    -moz-transform: rotate(315deg);
+    -webkit-transform: rotate(315deg);
+    transform: rotate(315deg);
+    @include mq-tablet {
+      right: 20px;
+    }
+    @include mq-small {
+      right: 20px;
+    }
+  }
+  
+  .purejscarousel-btn-prev {
+    border-bottom: 4px solid $main-color;
+    border-left: 4px solid $main-color;
+    left: 100px;
+    @include mq-tablet {
+      left: 20px;
+    }
+    @include mq-small {
+      left: 20px;
+    }
+  
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+  .purejscarousel-dots-container {
+    display: none;
+    float: left;
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .purejscarousel-dot {
+    background: #aaa;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: none;
+    cursor: pointer;
+    height: 15px;
+    outline: none;
+    margin: 0 5px;
+    width: 15px;
+    display: none;
+  }
+  
+  .active.purejscarousel-dot {
+    cursor: default;
+    opacity: 0.5;
+  }

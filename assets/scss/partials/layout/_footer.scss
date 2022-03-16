@@ -1,0 +1,146 @@
+footer {
+  background-color: $main-color;
+  padding: 30px 140px;
+  display: flex;
+  justify-content: space-between;
+  @include mq-tablet {
+    padding: 20px 10px;
+  }
+  @include mq-small {
+    flex-direction: column;
+    padding: 20px 30px;
+  }
+  .logo-navbar {
+    margin-top: 40px;
+  }
+  .logo {
+    width: 200px;
+    &__image {
+      max-width: 100%;
+    }
+  }
+  .navbar {
+    margin-top: 40px;
+    display: flex;
+    @include mq-small {
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    &__item {
+      margin-right: 30px;
+      @include mq-small {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+    &__link {
+      color: black;
+    }
+   
+  }
+  .newsletter {
+    margin-top: 20px;
+    #newsletter-form {
+      color: black;
+    }
+    &__input {
+      height: 45px;
+      width: 530px;
+      border: 1px solid white;
+      display: block;
+      margin: 20px 0px 10px;
+      padding: 10px 20px;
+      box-sizing: border-box;
+      @include mq-small {
+        width: 100%;
+      }@include mq-tablet {
+        width: 100%;
+      }
+    }
+    &__button {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000000;
+        background: none!important;
+        border: none !important;
+        display: block;
+      }
+    &__check {
+      border: none;
+    }
+  }
+}
+
+//checkbox customising
+
+/* The container */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.07em;
+    color: #000000;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkmark {
+    position: absolute;
+    top: 6px;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border: none;
+    border-radius: 1px;
+    &::after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+  }
+}
+
+/* Create a custom checkbox */
+
+/* On mouse-over, add a grey background color */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: white;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: $main-color;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 3px;
+  top: 0px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

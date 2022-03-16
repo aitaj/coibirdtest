@@ -1,0 +1,10 @@
+@mixin mq-tablet() {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+@mixin mq-small() {
+  @media (max-width: 576px) {
+    @content;
+  }
+}

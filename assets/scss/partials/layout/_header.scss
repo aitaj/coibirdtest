@@ -1,0 +1,229 @@
+header {
+  .desktop {
+    &__up {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 20px;
+      align-items: center;
+    }
+    &__logo {
+      width: 500px;
+      animation: smooth-logo 1s;
+      .logo__image {
+        max-width: 100%;
+      }
+      @include mq-tablet {
+        width: 250px;
+      }
+    }
+
+    &__search {
+      position: relative;
+      input {
+        border: none;
+        border-bottom: 1px solid black;
+        width: 214px;
+      }
+      svg {
+        position: absolute;
+        top: -7px;
+      }
+    }
+    &__account {
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          margin-right: 20px;
+          a {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 14px;
+            color: #000000;
+          }
+          img {
+            width: 23px;
+          }
+        }
+      }
+      .register{
+        border-right: 1px solid black;
+        padding-right: 20px;
+      }
+    }
+    &__down {
+      margin: 0px 270px;
+      @include mq-tablet {
+        margin: 0px 100px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+
+        &__link {
+          color: #000000;
+          font-size: 16px;
+        }
+        .mega {
+          &__menu {
+            display: none;
+            padding: 31px 50px;
+            background-color: white;
+            width: 528px;
+            height: 462px;
+            flex-direction: column;
+            flex-wrap: wrap;
+            position: absolute;
+            box-sizing: border-box;
+            transition: all 1.3s;
+          }
+          &__link {
+            line-height: 40px;
+            font-size: 16px;
+            position: relative;
+            color: black;
+            &::after {
+              content: "";
+              position: absolute;
+              top: 20px;
+              left: 0px;
+              width: 0%;
+              height: 5px;
+              transition: width 0.5s;
+            }
+            &:hover {
+              &::after {
+                content: "";
+                position: absolute;
+                top: 20px;
+                left: 0px;
+                width: 100%;
+                background-color: $main-color;
+                height: 5px;
+                z-index: 4;
+              }
+            }
+          }
+          &:hover {
+            .mega__menu {
+              display: flex;
+              animation: smooth-dropdown 0.5s;
+            }
+          }
+        }
+      }
+    }
+    @include mq-small {
+      display: none;
+    }
+  }
+  .mobile {
+    display: none;
+    padding: 20px;
+
+    &__logo {
+      width: 50%;
+      display: inline-block;
+      animation: smooth-logo 1s;
+      img {
+        max-width: 100%;
+      }
+    }
+    &__search {
+      position: relative;
+      margin: 20px 0px;
+     
+      svg {
+        position: absolute;
+      }
+    }
+    &__account {
+      .account-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__link {
+          margin-right: 10px;
+        }
+      }
+    }
+    @include mq-small {
+      position: fixed;
+      background-color: white;
+      z-index: 333;
+      &__navbar {
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        right: 0px;
+        background-color: white;
+        width: 100%;
+        padding: 20px 0px;
+        display: none;
+        z-index: 30;
+        &.active {
+          display: block;
+          height: 350px;
+          animation: smooth-dropdown 1s;
+        }
+        .navbar {
+          &__item {
+            .mega__menu {
+              display: none;
+              &.active {
+                display: block;
+                animation: smooth-dropdown 1s;
+              }
+            }
+            .mega__item {
+              background-color: rgb(227, 230, 233);
+              &:hover {
+                background-color: rgb(220, 238, 245);
+              }
+            }
+            .mega__link {
+              padding: 10px 70px;
+              display: inline-block;
+              font-size: 18px;
+            }
+          }
+          &__link {
+            padding: 10px 70px;
+            display: inline-block;
+            font-size: 18px;
+            width: 66%;
+            &:hover {
+              background-color: rgb(220, 238, 245);
+            }
+          }
+        }
+      }
+    }
+
+    .account-list__icon {
+      width: 20px;
+    }
+    @include mq-small {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+@keyframes smooth-dropdown {
+  0% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes smooth-logo {
+  0% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
